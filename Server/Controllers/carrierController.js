@@ -34,7 +34,7 @@ router.post("/signup", async (req, res) => {
 
 router.post("/signin", async (req, res) => {
   try {
-    const [email, password] = req.body; //email and password required
+    const { email, password } = req.body; //email and password required
 
     const carrier = await Carrier.findOne({ email: email }); //carrier email key and value
 
