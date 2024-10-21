@@ -31,6 +31,20 @@ router.post("/signup", async (req, res) => {
 
 router.post("/signin", async (req, res) => {
   try {
+    const [email, password] = req.body; //email and password required
+
+    const carrier = await Carrier.findOne({ email: email }); //carrier email key and value
+
+    if (!email) throw new Error("Incorrect Admin name or password"); //conditional error call for email required
+
+    const passwordMatch = await bcrypt.compare(password, carrier.password); //password required through carrier
+
+    if (!passwordMatch) throw new Error("Password is Incorrect!"); // conditional error call for password required
+
+    //generate a token if the log in is successful
+    const token = jwt.sign({ id: carrier._id }, process.env.JWT_SECRET, {
+      expiresIn: "1day",
+    });
   } catch (err) {
     res.status(500).json({
       Error: err.message,
