@@ -38,7 +38,7 @@ router.post("/signin", async (req, res) => {
 
     const carrier = await Carrier.findOne({ email: email }); //carrier email key and value
 
-    if (!email) throw new Error("Incorrect Admin name or password"); //conditional error call for email required
+    if (!carrier) throw new Error("Incorrect Admin name or password"); //conditional error call for email required
 
     const passwordMatch = await bcrypt.compare(password, carrier.password); //password required through carrier
 
