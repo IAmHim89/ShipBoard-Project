@@ -28,8 +28,14 @@ const carrierValidation = require("./Middleware/carriervalidate");
 //? Carrier controller
 const carrierController = require("./Controllers/carrierController");
 
+//? shipper controller
+const shipperController = require("./Controllers/shipperController");
+
 //?carriercontroller path
 app.use("/carrier", carrierController);
+
+//?shipperController path
+app.use("/shipper", shipperController);
 
 //! mongoose variable
 const mongoose = require("mongoose");
