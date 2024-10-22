@@ -15,7 +15,7 @@ function App() {
     }
   }, []);
 
-  uploadImg = () => {
+  updateToken = () => {
     console.log("you have succesfully updated your token!");
     localStorage.setItem("myToken");
     setPersonalToken(token);
