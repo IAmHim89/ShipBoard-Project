@@ -15,18 +15,17 @@ function App() {
     }
   }, []);
 
-  updateToken = () => {
+  const updateToken = () => {
     console.log("Token successfully updated!!");
     localStorage.setItem("myToken");
     setPersonalToken(token);
   };
 
-  removeToken = () => {
-    Console.log("Token succesfully removed!");
+  const removeToken = () => {
+    console.log("Token succesfully removed!");
     localStorage.clear("");
     setPersonalToken();
   };
-
   return (
     <div>
       <Routes>
