@@ -16,9 +16,15 @@ function App() {
   }, []);
 
   updateToken = () => {
-    console.log("you have succesfully updated your token!");
+    console.log("Token successfully updated!!");
     localStorage.setItem("myToken");
     setPersonalToken(token);
+  };
+
+  removeToken = () => {
+    Console.log("Token succesfully removed!");
+    localStorage.clear("");
+    setPersonalToken();
   };
 
   return (
