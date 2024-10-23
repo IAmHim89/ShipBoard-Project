@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import "../CssFiles/signUp.css";
 
 const SignUp = (props) => {
   const [businessName, setBusinessName] = useState("");
