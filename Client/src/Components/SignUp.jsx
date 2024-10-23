@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 
 const SignUp = (props) => {
+  const [carrier, setCarrier] = useState(true);
   const businessNameRef = useRef("");
   const firstNameRef = useRef("");
   const lastNameRef = useRef("");
@@ -44,7 +45,12 @@ const SignUp = (props) => {
   return (
     <div>
       <div className="carrierSignUpForm_container">
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleFetch();
+          }}
+        >
           <h3>Carrier Sign Up</h3>
           <input
             type="text"
@@ -77,7 +83,7 @@ const SignUp = (props) => {
             name="password"
             placeholder="Password"
           />
-          <button>SignUp</button>
+          <button onClick={() => handleRefInput()}>SignUp</button>
         </form>
       </div>
 
