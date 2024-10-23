@@ -33,7 +33,7 @@ const LandingPage = () => {
       </header>
       <main>
         <div className="buttonSignUp_container">
-          <Link to="/signup">
+          <Link to="/signup" target="_blank">
             <button>SignUp</button>
           </Link>
         </div>
