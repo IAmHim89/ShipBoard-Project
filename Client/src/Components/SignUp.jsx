@@ -20,11 +20,11 @@ const SignUp = (props) => {
         },
         body: JSON.stringify({
           businessName: businessName,
-          firstNameRef: firstName,
-          lastNameRef: lastName,
-          emailRef: email,
-          dotNumberRef: dotNumber,
-          passwordRef: password,
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          dotNumber: dotNumber,
+          password: password,
         }),
       });
       const json = await response.json();
@@ -79,7 +79,7 @@ const SignUp = (props) => {
           />
           <input
             type="email"
-            ref={emailRef}
+            value={email}
             name="email"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
@@ -91,7 +91,7 @@ const SignUp = (props) => {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.name)}
           />
-          <button onClick={handleClick}>SignUp</button>
+          <button type="submit">SignUp</button>
         </form>
       </div>
 
