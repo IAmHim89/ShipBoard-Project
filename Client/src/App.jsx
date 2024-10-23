@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [personalToken, setPersonalToken] = useState("");
+
   useEffect(() => {
     let token = localStorage.getItem("myToken");
     if (token) {
