@@ -1,18 +1,19 @@
-import { useRef, useState, useRef } from "react";
+import { useRef, useState } from "react";
 
-const SignUp = () => {
-  const [errorMsg, setErrorMsg] = useState("");
+const SignUp = (props) => {
   const businessNameRef = useRef("");
   const firstNameRef = useRef("");
   const lastNameRef = useRef("");
   const emailRef = useRef("");
   const dotNumberRef = useRef("");
   const passwordRef = useRef("");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  console.log(props.updateToken);
 
   const handleRefInput = () => {
     passwordRef.current.focus();
   };
-
   const handleFetch = async () => {
     try {
       const response = await fetch("http://localhost:5173/", {
@@ -29,7 +30,16 @@ const SignUp = () => {
           passwordRef: passwordRef.current.value,
         }),
       });
-    } catch (err) {}
+      const jsonData = await response.json();
+      console.log(jsonData);
+      if (json.Error) {
+        throw new Error(json.Error);
+      } else {
+        props.updateToken(json.Token);
+      }
+    } catch (err) {
+      setErrorMsg(err.message);
+    }
   };
   return (
     <div>
