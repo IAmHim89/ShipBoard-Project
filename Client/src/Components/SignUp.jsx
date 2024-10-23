@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useRef } from "react";
 
 const SignUp = () => {
   const [errorMsg, setErrorMsg] = useState("");
@@ -8,6 +8,28 @@ const SignUp = () => {
   const emailRef = useRef("");
   const dotNumberRef = useRef("");
   const passwordRef = useRef("");
+
+  const handleRefInput = () => {
+    
+  }
+
+
+  const handleFetch = async () => {
+    try {
+      const response = await fetch("http://localhost:5173/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          businessName: 
+        })
+
+      })
+    } catch (err) {
+      
+    }
+  }
   return (
     <div>
       <div className="carrierSignUpForm_container">
