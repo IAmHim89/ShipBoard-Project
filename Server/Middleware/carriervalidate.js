@@ -18,7 +18,7 @@ const carrierValidate = async (req, res, next) => {
     console.log("decrypted payload", decoded);
 
     //verify Carrier
-
+    console.log(decoded);
     const carrier = await Carrier.findById(decoded.id);
 
     if (!carrier) throw new Error("Carrier not Found!");

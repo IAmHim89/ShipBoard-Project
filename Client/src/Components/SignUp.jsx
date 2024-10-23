@@ -1,38 +1,35 @@
 import { useRef, useState } from "react";
 
 const SignUp = (props) => {
-  const [carrier, setCarrier] = useState(true);
-  const businessNameRef = useRef("");
-  const firstNameRef = useRef("");
-  const lastNameRef = useRef("");
-  const emailRef = useRef("");
-  const dotNumberRef = useRef("");
-  const passwordRef = useRef("");
+  const [businessName, setBusinessName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [dotNumber, setDotNumber] = useState("");
+  const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
 
   console.log(props.updateToken);
 
-  const handleRefInput = () => {
-    passwordRef.current.focus();
-  };
   const handleFetch = async () => {
     try {
-      const response = await fetch("http://localhost:5173/", {
+      const response = await fetch("http://localhost:3001/carrier/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          businessName: businessNameRef.current.value,
-          firstNameRef: firstNameRef.current.value,
-          lastNameRef: lastNameRef.current.value,
-          emailRef: emailRef.current.value,
-          dotNumberRef: dotNumberRef.current.value,
-          passwordRef: passwordRef.current.value,
+          businessName: businessName,
+          firstNameRef: firstName,
+          lastNameRef: lastName,
+          emailRef: email,
+          dotNumberRef: dotNumber,
+          passwordRef: password,
         }),
       });
-      const jsonData = await response.json();
-      console.log(jsonData);
+      const json = await response.json();
+      console.log(json);
+
       if (json.Error) {
         throw new Error(json.Error);
       } else {
@@ -54,36 +51,47 @@ const SignUp = (props) => {
           <h3>Carrier Sign Up</h3>
           <input
             type="text"
-            ref={businessNameRef}
+            value={businessName}
             name="businessName"
             placeholder="BusinessName"
+            onChange={(e) => setBusinessName(e.target.value)}
           />
           <input
             type="text"
-            ref={firstNameRef}
+            value={firstName}
             name="firstName"
             placeholder="FirstName"
+            onChange={(e) => setFirstName(e.target.value)}
           />
           <input
             type="text"
-            ref={lastNameRef}
+            value={lastName}
             name="lastName"
             placeholder="LastName"
+            onChange={(e) => setLastName(e.target.value)}
           />
           <input
             type="text"
-            ref={dotNumberRef}
+            value={dotNumber}
             name="dotNumber"
             placeholder="DotNumber"
+            onChange={(e) => setDotNumber(e.target.value)}
           />
-          <input type="email" ref={emailRef} name="email" placeholder="Email" />
+          <input
+            type="email"
+            ref={emailRef}
+            name="email"
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <input
             type="password"
-            ref={passwordRef}
+            value={password}
             name="password"
             placeholder="Password"
+            onChange={(e) => setPassword(e.target.name)}
           />
-          <button onClick={() => handleRefInput()}>SignUp</button>
+          <button onClick={handleClick}>SignUp</button>
         </form>
       </div>
 
