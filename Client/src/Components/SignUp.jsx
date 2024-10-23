@@ -2,17 +2,16 @@ import { useRef, useState, useRef } from "react";
 
 const SignUp = () => {
   const [errorMsg, setErrorMsg] = useState("");
-  const firstNameRef = useRef("");
   const businessNameRef = useRef("");
+  const firstNameRef = useRef("");
   const lastNameRef = useRef("");
   const emailRef = useRef("");
   const dotNumberRef = useRef("");
   const passwordRef = useRef("");
 
   const handleRefInput = () => {
-    
-  }
-
+    passwordRef.current.focus();
+  };
 
   const handleFetch = async () => {
     try {
@@ -22,14 +21,16 @@ const SignUp = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          businessName: 
-        })
-
-      })
-    } catch (err) {
-      
-    }
-  }
+          businessName: businessNameRef.current.value,
+          firstNameRef: firstNameRef.current.value,
+          lastNameRef: lastNameRef.current.value,
+          emailRef: emailRef.current.value,
+          dotNumberRef: dotNumberRef.current.value,
+          passwordRef: passwordRef.current.value,
+        }),
+      });
+    } catch (err) {}
+  };
   return (
     <div>
       <div className="carrierSignUpForm_container">
