@@ -96,7 +96,7 @@ const SignUp = (props) => {
             value={password}
             name="password"
             placeholder="Password"
-            onChange={(e) => setPassword(e.target.name)}
+            onChange={(e) => setPassword(e.target.value)}
             min={5}
             max={12}
             required
