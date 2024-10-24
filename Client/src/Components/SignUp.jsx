@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import "../CssFiles/signUp.css";
 
 const SignUp = (props) => {
@@ -103,7 +104,11 @@ const SignUp = (props) => {
           <button type="submit">SignUp</button>
         </form>
       </div>
-
+      <div className="backbtn_container">
+        <Link to="/">
+          <button>Back</button>
+        </Link>
+      </div>
       <div className="shipperSignUpForm_container">
         <form>
           <h3>Shipper Sign Up</h3>
