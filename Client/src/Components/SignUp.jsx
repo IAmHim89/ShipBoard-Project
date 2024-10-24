@@ -117,7 +117,7 @@ const SignUp = (props) => {
           <input type="text" name="lastName" placeholder="LastName" />
           <input type="email" name="email" placeholder="Email" />
           <input type="password" name="password" placeholder="Password" />
-          <button>SignUp</button>
+          <button> SignUp</button>
         </form>
       </div>
     </div>

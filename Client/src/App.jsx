@@ -31,7 +31,10 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/carrierlogin" element={<CarrierLogin />} />
+        <Route
+          path="/carrierlogin"
+          element={<CarrierLogin updateToken={updateToken} />}
+        />
         <Route path="/shipperlogin" element={<ShipperLogin />} />
         <Route path="/signup" element={<SignUp updateToken={updateToken} />} />
       </Routes>
