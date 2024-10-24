@@ -56,6 +56,7 @@ const SignUp = (props) => {
             name="businessName"
             placeholder="BusinessName"
             onChange={(e) => setBusinessName(e.target.value)}
+            required
           />
           <input
             type="text"
@@ -63,6 +64,7 @@ const SignUp = (props) => {
             name="firstName"
             placeholder="FirstName"
             onChange={(e) => setFirstName(e.target.value)}
+            required
           />
           <input
             type="text"
@@ -70,6 +72,7 @@ const SignUp = (props) => {
             name="lastName"
             placeholder="LastName"
             onChange={(e) => setLastName(e.target.value)}
+            required
           />
           <input
             type="text"
@@ -77,6 +80,7 @@ const SignUp = (props) => {
             name="dotNumber"
             placeholder="DotNumber"
             onChange={(e) => setDotNumber(e.target.value)}
+            required
           />
           <input
             type="email"
@@ -84,6 +88,7 @@ const SignUp = (props) => {
             name="email"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <input
             type="password"
@@ -91,6 +96,9 @@ const SignUp = (props) => {
             name="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.name)}
+            min={5}
+            max={12}
+            required
           />
           <button type="submit">SignUp</button>
         </form>
