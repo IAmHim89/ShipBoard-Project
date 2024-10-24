@@ -4,18 +4,37 @@
     gap: 10px;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
+    border: 5px solid black;
     padding-top: 2em;
     padding-bottom: 2em;
+    background-color: black;
+    opacity: .9;
+    
    
 
 }
 .carrierSignUpForm_container  input{
     padding: .5em 5em;
+    color: black;
     text-align: center;
     border: 2px solid black;
     box-shadow: 2px 2px 10px black;
+    background-color: white;
+    
    
+
+}
+.carrierSignUpForm_container h3{
+   font-size: 3em;
+   font-family: Abril fatface;
+   color: white;
+   text-shadow: 2px 2px 8px black;
+
+
+}
+.carrierSignUpForm_container button{
+  
+
 
 }
 
