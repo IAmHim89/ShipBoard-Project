@@ -23,6 +23,11 @@ const CarrierLogin = (props) => {
       });
       const signInData = await response.json();
       console.log(signInData);
+      if (json.Error) {
+        throw new Error(json.Error);
+      } else {
+        props.updateToken(json.Token);
+      }
     } catch (err) {
       setErrMsg(err.message);
     }
