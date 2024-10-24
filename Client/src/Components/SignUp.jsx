@@ -68,7 +68,62 @@ const SignUp = (props) => {
             handleFetch();
           }}
         >
-          <h3>{carrierSignUp ? "Carrier SignUp" : "Shipper SignUp"}</h3>
+          <h3>{carrierSignUp ? "Carrier" : "Shipper"}SignUp</h3>
+          {carrierSignUp && (
+            <>
+              <input
+                type="text"
+                value={businessName}
+                name="businessName"
+                placeholder="BusinessName"
+                onChange={(e) => setBusinessName(e.target.value)}
+                required
+              />
+              <input
+                type="text"
+                value={firstName}
+                name="firstName"
+                placeholder="FirstName"
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
+              <input
+                type="text"
+                value={lastName}
+                name="lastName"
+                placeholder="LastName"
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
+              <input
+                type="text"
+                value={dotNumber}
+                name="dotNumber"
+                placeholder="DotNumber"
+                onChange={(e) => setDotNumber(e.target.value)}
+                required
+              />
+              <input
+                type="email"
+                value={email}
+                name="email"
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <input
+                type="password"
+                value={password}
+                name="password"
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                min={5}
+                max={12}
+                required
+              />
+            </>
+          )}
+
           <input
             type="text"
             value={businessName}
@@ -93,14 +148,7 @@ const SignUp = (props) => {
             onChange={(e) => setLastName(e.target.value)}
             required
           />
-          <input
-            type="text"
-            value={dotNumber}
-            name="dotNumber"
-            placeholder="DotNumber"
-            onChange={(e) => setDotNumber(e.target.value)}
-            required
-          />
+
           <input
             type="email"
             value={email}
@@ -119,7 +167,14 @@ const SignUp = (props) => {
             max={12}
             required
           />
+
           <button type="submit">SignUp</button>
+          <button
+            type="button"
+            onClick={() => setCarrierSignUp((prev) => !prev)}
+          >
+            {carrierSignUp ? "Carrier" : "Shipper"}
+          </button>
         </form>
       </div>
       <div className="backbtn_container">
