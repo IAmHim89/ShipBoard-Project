@@ -29,11 +29,14 @@
    font-family: Abril fatface;
    color: white;
    text-shadow: 2px 2px 8px black;
+   letter-spacing: 5px;
+   margin-bottom: 1em;
 
 
 }
 .carrierSignUpForm_container button{
-  
+    padding: .5em 2em;
+    letter-spacing: 5px;
 
 
 }
