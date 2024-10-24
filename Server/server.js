@@ -31,11 +31,12 @@ const carrierController = require("./Controllers/carrierController");
 //? shipper controller
 const shipperController = require("./Controllers/shipperController");
 
-//?carriercontroller path
-app.use("/carrier", carrierController);
-
 //?shipperController path
 app.use("/shipper", shipperController);
+
+//?carriercontroller path
+app.use("/carrier", carrierController);
+app.use(carrierValidation);
 
 //! mongoose variable
 const mongoose = require("mongoose");

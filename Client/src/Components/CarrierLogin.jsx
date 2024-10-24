@@ -20,7 +20,7 @@ const CarrierLogin = (props) => {
     try {
       setErrMsg("");
       const response = await fetch("http://localhost:3001/carrier/signin", {
-        method: POST,
+        method: "POST",
         headers: {
           "Content-type": "application/json",
         },
@@ -63,6 +63,7 @@ const CarrierLogin = (props) => {
             type="password"
             name="password"
             placeholder="Password"
+            required
           />
           <button onClick={() => handleClick()}>Sign In</button>
         </form>

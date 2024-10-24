@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../CssFiles/signUp.css";
 
 const SignUp = (props) => {
+  const [carrierSignUp, setCarrierSignUp] = useState(true);
   const [businessName, setBusinessName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -15,20 +16,37 @@ const SignUp = (props) => {
 
   const handleFetch = async () => {
     try {
-      const response = await fetch("http://localhost:3001/carrier/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          businessName: businessName,
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-          dotNumber: dotNumber,
-          password: password,
-        }),
-      });
+      const response = await fetch(
+        `${
+          carrierSignUp
+            ? "http://localhost:3001/carrier/signup"
+            : "http://localhost:3001/shipper/signup"
+        }`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(
+            carrierSignUp
+              ? {
+                  businessName: businessName,
+                  firstName: firstName,
+                  lastName: lastName,
+                  email: email,
+                  dotNumber: dotNumber,
+                  password: password,
+                }
+              : {
+                  businessName: businessName,
+                  firstName: firstName,
+                  lastName: lastName,
+                  email: email,
+                  password: password,
+                }
+          ),
+        }
+      );
       const json = await response.json();
       console.log(json);
 
@@ -50,7 +68,7 @@ const SignUp = (props) => {
             handleFetch();
           }}
         >
-          <h3>Carrier Sign Up</h3>
+          <h3>{carrierSignUp ? "Carrier SignUp" : "Shipper SignUp"}</h3>
           <input
             type="text"
             value={businessName}
