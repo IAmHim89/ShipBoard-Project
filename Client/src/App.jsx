@@ -35,7 +35,10 @@ function App() {
           path="/carrierlogin"
           element={<CarrierLogin updateToken={updateToken} />}
         />
-        <Route path="/shipperlogin" element={<ShipperLogin />} />
+        <Route
+          path="/shipperlogin"
+          element={<ShipperLogin updateToken={updateToken} />}
+        />
         <Route path="/signup" element={<SignUp updateToken={updateToken} />} />
       </Routes>
     </div>
