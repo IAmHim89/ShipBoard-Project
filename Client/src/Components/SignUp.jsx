@@ -69,60 +69,6 @@ const SignUp = (props) => {
           }}
         >
           <h3>{carrierSignUp ? "Carrier" : "Shipper"}SignUp</h3>
-          {carrierSignUp && (
-            <>
-              <input
-                type="text"
-                value={businessName}
-                name="businessName"
-                placeholder="BusinessName"
-                onChange={(e) => setBusinessName(e.target.value)}
-                required
-              />
-              <input
-                type="text"
-                value={firstName}
-                name="firstName"
-                placeholder="FirstName"
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-              />
-              <input
-                type="text"
-                value={lastName}
-                name="lastName"
-                placeholder="LastName"
-                onChange={(e) => setLastName(e.target.value)}
-                required
-              />
-              <input
-                type="text"
-                value={dotNumber}
-                name="dotNumber"
-                placeholder="DotNumber"
-                onChange={(e) => setDotNumber(e.target.value)}
-                required
-              />
-              <input
-                type="email"
-                value={email}
-                name="email"
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <input
-                type="password"
-                value={password}
-                name="password"
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-                min={5}
-                max={12}
-                required
-              />
-            </>
-          )}
 
           <input
             type="text"
@@ -148,7 +94,18 @@ const SignUp = (props) => {
             onChange={(e) => setLastName(e.target.value)}
             required
           />
-
+          {carrierSignUp && (
+            <>
+              <input
+                type="text"
+                value={dotNumber}
+                name="dotNumber"
+                placeholder="DotNumber"
+                onChange={(e) => setDotNumber(e.target.value)}
+                required
+              />
+            </>
+          )}
           <input
             type="email"
             value={email}
@@ -168,12 +125,15 @@ const SignUp = (props) => {
             required
           />
 
-          <button type="submit">SignUp</button>
+          <button id="submit_btn" type="submit">
+            SignUp
+          </button>
           <button
             type="button"
+            id="prev_btn"
             onClick={() => setCarrierSignUp((prev) => !prev)}
           >
-            {carrierSignUp ? "Carrier" : "Shipper"}
+            {carrierSignUp ? "Carrier" : "Shipper"}Form
           </button>
         </form>
       </div>
@@ -182,19 +142,22 @@ const SignUp = (props) => {
           <button>Back</button>
         </Link>
       </div>
-      <div className="shipperSignUpForm_container">
-        <form>
-          <h3>Shipper Sign Up</h3>
-          <input type="text" name="businessName" placeholder="Business Name" />
-          <input type="text" name="firstName" placeholder="FirstName" />
-          <input type="text" name="lastName" placeholder="LastName" />
-          <input type="email" name="email" placeholder="Email" />
-          <input type="password" name="password" placeholder="Password" />
-          <button> SignUp</button>
-        </form>
-      </div>
     </div>
   );
 };
 
 export default SignUp;
+
+{
+  /* <div className="shipperSignUpForm_container">
+  <form>
+    <h3>Shipper Sign Up</h3>
+    <input type="text" name="businessName" placeholder="Business Name" />
+    <input type="text" name="firstName" placeholder="FirstName" />
+    <input type="text" name="lastName" placeholder="LastName" />
+    <input type="email" name="email" placeholder="Email" />
+    <input type="password" name="password" placeholder="Password" />
+    <button> SignUp</button>
+  </form>
+</div>  */
+}
