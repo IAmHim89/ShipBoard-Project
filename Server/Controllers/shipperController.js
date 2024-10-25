@@ -48,6 +48,9 @@ router.post("/signin", async (req, res) => {
       Token: token,
     });
   } catch (err) {
+    res.status(500).json({
+      Error: err.message,
+    });
     err.message;
   }
 });
