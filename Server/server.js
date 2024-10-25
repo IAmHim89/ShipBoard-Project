@@ -25,6 +25,8 @@ app.use(
 
 const carrierValidation = require("./Middleware/carriervalidate");
 
+const shipperValidation = require("./Middleware/shippervalidate");
+
 //? Carrier controller
 const carrierController = require("./Controllers/carrierController");
 
@@ -33,6 +35,7 @@ const shipperController = require("./Controllers/shipperController");
 
 //?shipperController path
 app.use("/shipper", shipperController);
+app.use(shipperValidation);
 
 //?carriercontroller path
 app.use("/carrier", carrierController);
