@@ -33,13 +33,13 @@ router.post("/signin", async (req, res) => {
 
     const shipper = await Shipper.findOne({ email: email });
 
-    if (!shipper) throw new Error("Incorerect Admin or password!");
+    if (!shipper) throw new Error("Incorrect Admin or password!");
 
     const passwordMatch = await bcrypt.compare(password, shipper.password);
 
     if (!passwordMatch) throw new Error("Incorrrect Admin or password!");
 
-    const token = jwt.sign({ id: carrier_id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ id: shipper._id }, process.env.JWT_SECRET, {
       expiresIn: "1day",
     });
     res.status(200).json({

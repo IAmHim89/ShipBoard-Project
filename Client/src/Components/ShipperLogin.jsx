@@ -23,6 +23,7 @@ const ShipperLogin = (props) => {
         }),
       });
       const json = await response.json();
+      console.log(json);
       if (json.Error) {
         throw new Error(json.Error);
       } else {
@@ -43,12 +44,19 @@ const ShipperLogin = (props) => {
           }}
         >
           <h3>Shipper LogIn</h3>
-          <input ref={emailRef} type="email" name="email" placeholder="Email" />
+          <input
+            ref={emailRef}
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
           <input
             ref={passwordRef}
             type="password"
             name="password"
             placeholder="Password"
+            required
           />
           <button onClick={() => handleClick()}>Sign In</button>
         </form>
