@@ -10,7 +10,7 @@
     background-color: black;
     opacity: .9;
     border-radius: 2em;
-   
+   min-width: 50vw;
     
 }
 
@@ -41,15 +41,23 @@
     
 }
 
-#submit_btn{ padding: .5em 2em;
+.btn_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#submit_btn{ padding: .5em 1em;
     color: white;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     background-color: blue;
     box-shadow: 2px 2px 8px black;
 }
 
-#submit_btn:hover{padding: .5em 2em;
-    letter-spacing: 5px;
+#submit_btn:hover{
+    letter-spacing: 2px;
     background-color: blue;
     box-shadow: 2px 2px 10px white;
 }

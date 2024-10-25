@@ -124,23 +124,23 @@ const SignUp = (props) => {
             max={12}
             required
           />
-
-          <button id="submit_btn" type="submit">
-            SignUp
-          </button>
-          <button
-            type="button"
-            id="prev_btn"
-            onClick={() => setCarrierSignUp((prev) => !prev)}
-          >
-            {carrierSignUp ? "Carrier" : "Shipper"}Form
-          </button>
+          <div className="btn_container">
+            <button
+              type="button"
+              id="prev_btn"
+              onClick={() => setCarrierSignUp((prev) => !prev)}
+            >
+              {carrierSignUp ? "Shipper" : "Carrier"}Form
+            </button>
+            <button id="submit_btn" type="submit">
+              SignUp
+            </button>
+            <Link to="/">
+              <button>Back</button>
+            </Link>
+            <div className="backbtn_container"></div>
+          </div>
         </form>
-      </div>
-      <div className="backbtn_container">
-        <Link to="/">
-          <button>Back</button>
-        </Link>
       </div>
     </div>
   );
