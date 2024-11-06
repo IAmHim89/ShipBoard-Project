@@ -7,15 +7,38 @@
     border: 2px solid black;
     flex-direction: column;
     gap: 20px;
-    padding: 4em 1.5em;
+    padding: 2em 1.5em;
     margin-top: 1em;
     margin-bottom: em;
 }
 
-.carrierForm_container input{
+form > h3{
+   margin-bottom: .5em;
+   font-size: 2em;
+   font-weight: bolder;
+   font-family: Abril fatface;
+   color: black;
+   text-shadow: 2px 2px 5px black;
+    letter-spacing: 5px;
+    border-bottom: 2px solid black;
+    backdrop-filter: blur(5px);
+}
+
+form > input{
     padding: .5em 4em;
     margin-bottom: 1em;
     border-radius: 2em;
     text-align: center;
     font-family: Abril fatface;
+    letter-spacing: 5px;
+    
+}
+form > input:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+form > button{
+    margin: 0em 2em;
+    
 }
