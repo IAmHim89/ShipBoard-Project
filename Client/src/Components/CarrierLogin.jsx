@@ -52,6 +52,7 @@ const CarrierLogin = (props) => {
         >
           <h3>Carrier LogIn</h3>
           <input
+            className="input1"
             ref={emailRef}
             type="email"
             name="email"
@@ -59,6 +60,7 @@ const CarrierLogin = (props) => {
             required
           />
           <input
+            className="input2"
             ref={passwordRef}
             type="password"
             name="password"

@@ -1,0 +1,21 @@
+.carrierForm_container{
+    display: flex;
+}
+
+.carrierForm_container > form{
+    display: flex;
+    border: 2px solid black;
+    flex-direction: column;
+    gap: 20px;
+    padding: 4em 1.5em;
+    margin-top: 1em;
+    margin-bottom: em;
+}
+
+.carrierForm_container input{
+    padding: .5em 4em;
+    margin-bottom: 1em;
+    border-radius: 2em;
+    text-align: center;
+    font-family: Abril fatface;
+}
