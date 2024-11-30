@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import "../CssFiles/shipperLogin.css";
+import { Link } from "react-router-dom";
 
 const ShipperLogin = (props) => {
   const [errMsg, setErrMsg] = useState("");
@@ -62,6 +63,11 @@ const ShipperLogin = (props) => {
           />
           <button onClick={() => handleClick()}>Sign In</button>
         </form>
+      </div>
+      <div className="backBtn_wrapper">
+        <Link to="/">
+          <button className="back_btn">Back</button>
+        </Link>
       </div>
     </div>
   );
