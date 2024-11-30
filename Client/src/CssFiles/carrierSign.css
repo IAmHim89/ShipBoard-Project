@@ -1,8 +1,4 @@
-.carrierForm_container {
-  display: flex;
-}
-
-.carrierForm_container > form {
+.carrierForm_container > .carrier_form {
   display: flex;
   border: 2px solid black;
   border-radius: 2em;
@@ -14,7 +10,7 @@
   backdrop-filter: blur(5px);
 }
 
-form > h3 {
+.carrier_form > h3 {
   margin-bottom: 0.5em;
   font-size: 2em;
   font-weight: bolder;
@@ -26,7 +22,7 @@ form > h3 {
   backdrop-filter: blur(5px);
 }
 
-form > input {
+.carrier_form > input {
   padding: 0.5em 4em;
   margin-bottom: 1em;
   border-radius: 2em;
@@ -35,7 +31,7 @@ form > input {
   letter-spacing: 5px;
 }
 
-form > input:hover {
+.carrier_form > input:hover {
   cursor: pointer;
   background-color: white;
   color: black;
@@ -51,7 +47,7 @@ form > input:hover {
   text-shadow: 2px 2px 2px black;
 }
 
-form > button:hover {
+.carrier_form > button:hover {
   background-color: white;
   color: black;
   font-family: Abril fatface;

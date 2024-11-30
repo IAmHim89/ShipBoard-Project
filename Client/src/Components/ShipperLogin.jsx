@@ -39,6 +39,7 @@ const ShipperLogin = (props) => {
     <div>
       <div className="shipperForm_container">
         <form
+          className="shipper_form"
           onSubmit={(e) => {
             e.preventDefault();
             handleFetch();

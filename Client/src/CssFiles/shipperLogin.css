@@ -1,0 +1,57 @@
+.shipperForm_container > .shipper_form {
+  display: flex;
+  border: 2px solid black;
+  border-radius: 2em;
+  box-shadow: 2px 2px 8px black;
+  flex-direction: column;
+  gap: 20px;
+  padding: 2em 1.5em;
+  margin-top: 1em;
+  backdrop-filter: blur(5px);
+}
+
+.shipper_form > h3 {
+  margin-bottom: 0.5em;
+  font-size: 2em;
+  font-weight: bolder;
+  font-family: Abril fatface;
+  color: black;
+  text-shadow: 2px 2px 5px black;
+  letter-spacing: 5px;
+  border-bottom: 2px solid black;
+  backdrop-filter: blur(5px);
+}
+
+.shipper_form > input {
+  padding: 0.5em 4em;
+  margin-bottom: 1em;
+  border-radius: 2em;
+  text-align: center;
+  font-family: Abril fatface;
+  letter-spacing: 5px;
+}
+
+.shipper_form > input:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.shipper_form > button {
+  margin: 0em 2em;
+  background-color: red;
+  box-shadow: 3.5px 3.5px 2px black;
+  color: white;
+  font-family: Abril fatface;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 2px black;
+}
+
+.shipper_form > button:hover {
+  background-color: white;
+  color: black;
+  font-family: Abril fatface;
+  letter-spacing: 5px;
+  font-weight: bolder;
+  text-shadow: 2px 2px 5px black;
+}
