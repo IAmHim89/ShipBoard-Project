@@ -12,11 +12,11 @@ const LandingPage = () => {
               <li>
                 <img src={Logo} />
               </li>
-              <li>
+              {/* <li>
                 <Link to="carrierlogin">
                   <button id="carrier_btn">CarrierLogin</button>
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="shipperlogin">
                   <button id="shipper_btn">ShipperLogin</button>
