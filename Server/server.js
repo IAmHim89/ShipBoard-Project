@@ -45,7 +45,7 @@ app.use(carrierValidation);
 const mongoose = require("mongoose");
 
 //! DOTENV initialize through MONGODB variable
-const MONGODB = process.env.MONGODB_URL + process.env.MONGODB_NAME;
+const MONGODB = process.env.MONGODB_URL;
 
 //Mongoose variable connected through MONGODB
 mongoose.connect(MONGODB);
@@ -62,7 +62,7 @@ app.listen(PORT, () => {
 });
 
 //callback for mongodb
-db.once("open", async () => {
+db.once("open",  () => {
   console.log("*".repeat(10));
   console.log("Successfully connected to Database!");
   console.log("*".repeat(10));

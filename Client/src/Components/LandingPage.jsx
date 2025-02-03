@@ -5,18 +5,14 @@ import Logo from "../assets/Images/sblogo.png";
 const LandingPage = () => {
   return (
     <div>
-      <div className="nav_container">
+      <div className="nav_wrapper">
         <nav>
           <ul>
             <div className="button_flex">
               <li>
                 <img src={Logo} />
               </li>
-              {/* <li>
-                <Link to="carrierlogin">
-                  <button id="carrier_btn">CarrierLogin</button>
-                </Link>
-              </li> */}
+             
               <li>
                 <Link to="shipperlogin">
                   <button id="shipper_btn">ShipperLogin</button>
@@ -43,3 +39,10 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
+
+ {/* <li>
+                <Link to="carrierlogin">
+                  <button id="carrier_btn">CarrierLogin</button>
+                </Link>
+              </li> */}

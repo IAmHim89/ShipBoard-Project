@@ -61,7 +61,7 @@ const ShipperLogin = (props) => {
             placeholder="Password"
             required
           />
-          <button onClick={() => handleClick()}>Sign In</button>
+          <button onClick={(e) => handleClick(e.target.reset)}>Sign In</button>
         </form>
       </div>
       <div className="backBtn_wrapper">
